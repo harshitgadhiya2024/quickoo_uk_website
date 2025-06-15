@@ -1,0 +1,669 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Quickoo Premium Car Service{% endblock %}
+
+{% block content %}
+<!-- Contact Hero Section -->
+<section class="contact-hero-section">
+    <div class="hero-pattern"></div>
+    <div class="container">
+        <div class="contact-hero-content text-center">
+            <span class="hero-badge animate-fadeInUp" style="color: white;">Get in Touch</span><br><br>
+            <h1 class="hero-title animate-fadeInUp" style="color: white;">We're Here <span class="text-gradient">24/7</span> For You</h1>
+            <p class="hero-subtitle animate-fadeInUp">Experience world-class customer service at any hour of the day</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Info Section -->
+<section class="contact-info-section py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-card active">
+                    <div class="card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Call Us Directly</h4>
+                    <p>Speak with our team for immediate assistance</p>
+                    <a href="tel:+442012345678" class="contact-link">+44 20 1234 5678</a>
+                    <span class="availability-badge">Available 24/7</span>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email Support</h4>
+                    <p>Get detailed responses to your inquiries</p>
+                    <a href="mailto:info@quickoo.co.uk" class="contact-link">info@quickoo.co.uk</a>
+                    <span class="response-time">Response within 2 hours</span>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-card">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4>Live Chat</h4>
+                    <p>Instant messaging with our support team</p>
+                    <!-- <button class="btn btn-primary btn-sm mt-2" onclick="openChat()">Start Chat</button> -->
+                    <span class="online-status">Agents Online</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Contact Form Section -->
+<section class="contact-form-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-form-wrapper" data-aos="fade-up">
+                    <div class="form-header text-center">
+                        <span class="section-badge">Send Message</span>
+                        <h2 class="section-title">How Can We <span class="text-gradient">Help You?</span></h2>
+                        <p class="section-subtitle">Fill out the form below and we'll get back to you promptly</p>
+                    </div>
+
+                    <form method="POST" action="{{ url_for('contact') }}" class="contact-form needs-validation" novalidate>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+                                    </div>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com" required>
+                                    </div>
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="+44 20 1234 5678" required>
+                                    </div>
+                                    <div class="invalid-feedback">Please enter your phone number.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                                        <select class="form-select" id="subject" name="subject" required>
+                                            <option value="">Choose a subject...</option>
+                                            <option value="booking">New Booking</option>
+                                            <option value="corporate">Corporate Account</option>
+                                            <option value="feedback">Feedback</option>
+                                            <option value="complaint">Complaint</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="invalid-feedback">Please select a subject.</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="service" class="form-label">Service Type</label>
+                                    <div class="service-options">
+                                        <label class="service-option">
+                                            <input type="radio" name="service" value="airport">
+                                            <span class="option-content">
+                                                <i class="fas fa-plane"></i>
+                                                <span style="text-align: center;">Airport<br> Transfer</span>
+                                            </span>
+                                        </label>
+                                        <label class="service-option">
+                                            <input type="radio" name="service" value="business">
+                                            <span class="option-content">
+                                                <i class="fas fa-briefcase"></i>
+                                                <span style="text-align: center;">Business<br> Travel</span>
+                                            </span>
+                                        </label>
+                                        <label class="service-option">
+                                            <input type="radio" name="service" value="event">
+                                            <span class="option-content">
+                                                <i class="fas fa-calendar"></i>
+                                                <span style="text-align: center;">Event<br> Transport</span>
+                                            </span>
+                                        </label>
+                                        <label class="service-option">
+                                            <input type="radio" name="service" value="hourly">
+                                            <span class="option-content">
+                                                <i class="fas fa-clock"></i>
+                                                <span style="text-align: center;">Hourly<br> Hires</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Your Message *</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                                    <div class="invalid-feedback">Please enter your message.</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        I'd like to receive exclusive offers and updates via email
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">
+                                    <i class="fas fa-paper-plane me-2"></i> Send Message
+                                </button>
+                                <p class="form-note mt-3">We'll respond within 2 hours during business hours</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Office Locations Section -->
+<!-- <section class="locations-section py-5">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Our Locations</span>
+            <h2 class="section-title">Find Us <span class="text-gradient">Across the UK</span></h2>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=600" alt="London Office">
+                        <div class="location-badge">Headquarters</div>
+                    </div>
+                    <div class="location-info">
+                        <h4>London Office</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Oxford Street, London W1D 2LG</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat-Sun: 10AM-4PM</p>
+                        <a href="#" class="location-link">Get Directions <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1565342403875-07a8dc5ed13c?q=80&w=600" alt="Manchester Office">
+                    </div>
+                    <div class="location-info">
+                        <h4>Manchester Office</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 45 Deansgate, Manchester M3 2AY</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-2PM</p>
+                        <a href="#" class="location-link">Get Directions <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1605924921277-84df93e3db13?q=80&w=600" alt="Birmingham Office">
+                    </div>
+                    <div class="location-info">
+                        <h4>Birmingham Office</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 78 Bull Street, Birmingham B4 6AB</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-2PM</p>
+                        <a href="#" class="location-link">Get Directions <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- FAQ Section -->
+<section class="faq-section py-5">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">FAQs</span>
+            <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <i class="fas fa-question-circle me-2"></i> How far in advance should I book?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We recommend booking at least 24 hours in advance to ensure vehicle availability. However, we do accept last-minute bookings subject to availability. For airport transfers, we suggest booking 48 hours in advance.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <i class="fas fa-question-circle me-2"></i> What is your cancellation policy?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Cancellations made more than 24 hours before your scheduled pickup time receive a full refund. Cancellations within 24 hours are subject to our sliding scale policy detailed in our terms and conditions.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <i class="fas fa-question-circle me-2"></i> Do you provide child seats?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, we provide complimentary child seats upon request. Please specify the age and number of children when booking so we can ensure appropriate safety seats are installed in your vehicle.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                <i class="fas fa-question-circle me-2"></i> What areas do you cover?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We provide services throughout Greater London and offer transfers to all major UK airports. We also service major cities including Manchester, Birmingham, Liverpool, and can arrange long-distance travel across the UK.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom Styles for Contact Page -->
+<style>
+/* Contact Hero Section */
+.contact-hero-section {
+    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+    padding: 150px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Contact Cards */
+.contact-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #487307 0%, #6ba60a 100%);
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover::before,
+.contact-card.active::before {
+    transform: scaleX(1);
+}
+
+.contact-card:hover,
+.contact-card.active {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: #487307;
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.card-icon i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.contact-link {
+    color: #487307;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #3a5a06;
+}
+
+.availability-badge,
+.response-time,
+.online-status {
+    display: inline-block;
+    background: rgba(72,115,7,0.1);
+    color: #487307;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
+.online-status {
+    background: rgba(40,167,69,0.1);
+    color: #28a745;
+}
+
+/* Contact Form */
+.contact-form-wrapper {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+    color: #fff;
+    border: none;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #487307;
+    box-shadow: 0 0 0 0.2rem rgba(72,115,7,0.25);
+}
+
+/* Service Options */
+.service-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.service-option {
+    position: relative;
+    cursor: pointer;
+}
+
+.service-option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.option-content i {
+    font-size: 2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.service-option input:checked + .option-content {
+    border-color: #487307;
+    background: rgba(72,115,7,0.05);
+}
+
+.service-option input:checked + .option-content i {
+    color: #487307;
+}
+
+.form-note {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Location Cards */
+.location-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.location-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.location-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.location-card:hover .location-image img {
+    transform: scale(1.1);
+}
+
+.location-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #487307;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+}
+
+.location-info {
+    padding: 2rem;
+}
+
+.location-info p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.location-info i {
+    color: #487307;
+    margin-right: 0.5rem;
+    width: 20px;
+    text-align: center;
+}
+
+.location-link {
+    color: #487307;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.location-link:hover {
+    color: #3a5a06;
+}
+
+/* FAQ Accordion */
+.accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.accordion-button {
+    background: #fff;
+    color: #333;
+    font-weight: 600;
+    padding: 1.5rem;
+    border: none;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+    color: #fff;
+}
+
+.accordion-button:not(.collapsed) i {
+    color: #fff;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23487307'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .contact-form-wrapper {
+        padding: 2rem;
+    }
+
+    .service-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-hero-section {
+        padding: 120px 0 80px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .contact-card {
+        margin-bottom: 2rem;
+    }
+
+    .location-card {
+        margin-bottom: 2rem;
+    }
+
+    .service-options {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- Initialize AOS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
+
+    // Placeholder for live chat function
+    window.openChat = function() {
+        alert('Live chat feature would open here. This is a placeholder for the actual chat implementation.');
+    };
+
+    // Animate contact cards on hover
+    const contactCards = document.querySelectorAll('.contact-card');
+    contactCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            contactCards.forEach(c => c.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+</script>
+{% endblock %}

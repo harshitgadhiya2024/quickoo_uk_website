@@ -1,0 +1,603 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Quickoo Premium Car Service{% endblock %}
+
+{% block content %}
+<!-- About Hero Section with Parallax -->
+<section class="about-hero-section">
+    <div class="parallax-bg" data-parallax="scroll" data-image-src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1920"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="about-hero-content text-center">
+            <span class="hero-badge animate-fadeInUp">About Quickoo</span>
+            <h1 class="hero-title animate-fadeInUp">Driving Excellence Since <span class="text-gradient">2014</span></h1>
+            <p class="hero-subtitle animate-fadeInUp">Your trusted partner in premium transportation across the United Kingdom</p>
+        </div>
+    </div>
+    <div class="custom-shape-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-content">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1000" alt="About Quickoo" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <h2>Excellence in Every Journey</h2>
+                <p>Founded with a vision to redefine luxury transportation in the UK, Quickoo has established itself as the premier choice for discerning travelers who value comfort, reliability, and exceptional service.</p>
+                <p>Our commitment to excellence extends beyond just transportation. We believe in creating memorable experiences that begin the moment you book with us and continue long after your journey ends.</p>
+                <p>With a fleet of meticulously maintained luxury vehicles and a team of professional chauffeurs, we ensure that every ride with Quickoo is nothing short of exceptional.</p>
+                <div class="mt-4">
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="mission-vision-section py-5 bg-light">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Our Purpose</span>
+            <h2 class="section-title">Mission & <span class="text-gradient">Vision</span></h2>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="mission-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p class="lead">To provide unparalleled luxury transportation that exceeds expectations at every touchpoint.</p>
+                    <ul class="mission-list">
+                        <li>Deliver consistent, reliable service 24/7</li>
+                        <li>Maintain the highest safety standards</li>
+                        <li>Provide transparent, fair pricing</li>
+                        <li>Create memorable travel experiences</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="vision-card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p class="lead">To be the UK's most trusted and innovative luxury transportation company.</p>
+                    <ul class="vision-list">
+                        <li>Lead in sustainable luxury transport</li>
+                        <li>Set new industry standards</li>
+                        <li>Expand across all major UK cities</li>
+                        <li>Pioneer in transport technology</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="values-section py-5 bg-gradient">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Our Values</span>
+            <h2 class="section-title">What Drives <span class="text-gradient">Us Forward</span></h2>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="100">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h4>Excellence</h4>
+                    <p>We never compromise on quality. Every detail matters, from the cleanliness of our vehicles to the professionalism of our chauffeurs.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="200">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Trust</h4>
+                    <p>Building lasting relationships through transparency, reliability, and consistent delivery of our promises.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="300">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>Embracing technology and new ideas to enhance customer experience and stay ahead of industry trends.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="400">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>Care</h4>
+                    <p>Treating every customer with genuine care and attention, ensuring comfort and satisfaction in every journey.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="500">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>Sustainability</h4>
+                    <p>Committed to reducing our environmental impact with eco-friendly vehicles and sustainable practices.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="600">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Community</h4>
+                    <p>Supporting local communities and creating opportunities for growth and development across the UK.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Team Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Why We Stand Out</span>
+            <h2 class="section-title">The Quickoo difference in <span class="text-gradient">luxury transportation</span></h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Award-Winning Service</h3>
+                    <p>Recognized for excellence in luxury transportation with multiple industry awards and certifications.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly Options</h3>
+                    <p>Commitment to sustainability with hybrid and electric vehicles available in our premium fleet.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Standards</h3>
+                    <p>International service standards with local expertise, serving clients from around the world.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Custom Styles for About Page -->
+<style>
+/* About Hero Section */
+.about-hero-section {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1920') center/cover;
+    will-change: transform;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(72,115,7,0.7) 100%);
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 150px 0 100px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2rem;
+}
+
+.hero-breadcrumb {
+    color: rgba(255,255,255,0.8);
+}
+
+.hero-breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-breadcrumb a:hover {
+    color: #6ba60a;
+}
+
+.custom-shape-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+    fill: #fff;
+}
+
+/* Story Section */
+.story-images {
+    position: relative;
+    padding-right: 3rem;
+}
+
+.story-img-main {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.story-img-secondary {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 50%;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border: 5px solid #fff;
+}
+
+.experience-badge {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: #487307;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(72,115,7,0.3);
+}
+
+.experience-badge .years {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.experience-badge .text {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.story-content {
+    padding-left: 3rem;
+}
+
+.story-features {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.story-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.story-feature i {
+    color: #487307;
+    font-size: 1.2rem;
+}
+
+/* Mission & Vision Cards */
+.mission-card, .vision-card {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.mission-card:hover, .vision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.card-icon i {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.mission-list, .vision-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.mission-list li, .vision-list li {
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.mission-list li::before, .vision-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #487307;
+}
+
+/* Team Section */
+.team-card {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.team-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.team-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.team-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(72,115,7,0.9) 0%, rgba(107,166,10,0.9) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .team-overlay {
+    opacity: 1;
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.1);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #fff;
+    color: #487307;
+    transform: translateY(-3px);
+}
+
+.team-info h4 {
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.team-info span {
+    color: #487307;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.team-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Values Section */
+.bg-gradient {
+    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+}
+
+.value-card {
+    background: rgba(255,255,255,0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.value-card:hover {
+    transform: translateY(-10px) rotateY(10deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.value-icon i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.value-card:hover .value-icon {
+    transform: rotate(360deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .story-images {
+        margin-bottom: 3rem;
+        padding-right: 0;
+    }
+
+    .story-img-secondary {
+        display: none;
+    }
+
+    .story-content {
+        padding-left: 0;
+    }
+
+    .story-features {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .about-hero-content {
+        padding: 120px 0 80px;
+    }
+
+    .experience-badge {
+        top: 20px;
+        left: 20px;
+        padding: 1rem;
+    }
+
+    .experience-badge .years {
+        font-size: 2rem;
+    }
+
+    .team-image img {
+        height: 250px;
+    }
+
+    .mission-card, .vision-card {
+        margin-bottom: 2rem;
+    }
+}
+</style>
+
+<!-- Initialize Parallax and AOS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.5.0/parallax.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+    });
+
+    // Parallax effect for hero background
+    const parallaxBg = document.querySelector('.parallax-bg');
+    if (parallaxBg) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    }
+});
+</script>
+{% endblock %}

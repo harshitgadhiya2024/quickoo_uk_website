@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block title %}Quickoo - Premium Car Service UK | Luxury Transportation{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="animate-fadeInUp">Premium Car Service at Your Fingertips</h1>
+                    <p class="animate-fadeInUp">Experience luxury transportation with Quickoo. Professional chauffeurs, pristine vehicles, and unmatched reliability across the UK.</p>
+                    <div class="hero-buttons animate-fadeInUp">
+                        <a href="tel:+442012345678" class="btn btn-primary me-3">
+                            <i class="fas fa-phone"></i> Book Now
+                        </a>
+                        <a href="{{ url_for('about') }}" class="btn btn-outline-light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Premium Services</h2>
+            <p>Tailored transportation solutions for every occasion</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Airport Transfers</h3>
+                    <p>Seamless transfers to and from all major UK airports. Track your flight and adjust pickup times accordingly.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business Travel</h3>
+                    <p>Professional chauffeur services for executives. Arrive in style and comfort to your important meetings.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Event Transportation</h3>
+                    <p>Special occasion transport for weddings, galas, and corporate events. Make every moment memorable.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Hourly Hire</h3>
+                    <p>Flexible hourly chauffeur services for shopping trips, city tours, or multiple destinations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fleet Section -->
+<section class="fleet-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Luxury Fleet</h2>
+            <p>Choose from our selection of premium vehicles</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card fleet-card">
+                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800" class="card-img-top" alt="Mercedes S-Class">
+                    <div class="card-body">
+                        <h4>Mercedes S-Class</h4>
+                        <p class="text-muted">Executive Sedan</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 3 Passengers</li>
+                            <li><i class="fas fa-check"></i> 3 Luggage</li>
+                            <li><i class="fas fa-check"></i> WiFi & Charging</li>
+                            <li><i class="fas fa-check"></i> Premium Comfort</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card fleet-card">
+                    <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?q=80&w=800" class="card-img-top" alt="BMW 7 Series">
+                    <div class="card-body">
+                        <h4>BMW 7 Series</h4>
+                        <p class="text-muted">Luxury Sedan</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 3 Passengers</li>
+                            <li><i class="fas fa-check"></i> 3 Luggage</li>
+                            <li><i class="fas fa-check"></i> Executive Features</li>
+                            <li><i class="fas fa-check"></i> Premium Sound</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card fleet-card">
+                    <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=800" class="card-img-top" alt="Mercedes V-Class">
+                    <div class="card-body">
+                        <h4>Mercedes V-Class</h4>
+                        <p class="text-muted">Executive Van</p>
+                        <ul class="fleet-features">
+                            <li><i class="fas fa-check"></i> 7 Passengers</li>
+                            <li><i class="fas fa-check"></i> 7 Luggage</li>
+                            <li><i class="fas fa-check"></i> Spacious Interior</li>
+                            <li><i class="fas fa-check"></i> Conference Seating</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Why Choose Quickoo</h2>
+            <p>Experience the difference with our premium service</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safety First</h4>
+                    <p>All drivers are licensed, insured, and background checked for your peace of mind.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-box">
+                    <i class="fas fa-star"></i>
+                    <h4>Premium Quality</h4>
+                    <p>Luxury vehicles maintained to the highest standards with professional chauffeurs.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-box">
+                    <i class="fas fa-clock"></i>
+                    <h4>24/7 Service</h4>
+                    <p>Round-the-clock availability for all your transportation needs, any day of the year.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-box">
+                    <i class="fas fa-pound-sign"></i>
+                    <h4>Fair Pricing</h4>
+                    <p>Transparent pricing with no hidden fees. Get instant quotes for your journey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Experience Luxury?</h2>
+        <p>Book your premium car service today and travel in style</p>
+        <div class="cta-buttons">
+            <a href="tel:+442012345678" class="btn btn-light btn-lg me-3">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+            <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg">
+                Get Quote
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

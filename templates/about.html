@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Quickoo Premium Car Service{% endblock %}
+
+{% block content %}
+<!-- About Hero -->
+<section class="about-hero">
+    <div class="container">
+        <h1>About Quickoo</h1>
+        <p>Your Trusted Partner in Premium Transportation</p>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-content">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1000" alt="About Quickoo" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <h2>Excellence in Every Journey</h2>
+                <p>Founded with a vision to redefine luxury transportation in the UK, Quickoo has established itself as the premier choice for discerning travelers who value comfort, reliability, and exceptional service.</p>
+                <p>Our commitment to excellence extends beyond just transportation. We believe in creating memorable experiences that begin the moment you book with us and continue long after your journey ends.</p>
+                <p>With a fleet of meticulously maintained luxury vehicles and a team of professional chauffeurs, we ensure that every ride with Quickoo is nothing short of exceptional.</p>
+                <div class="mt-4">
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-box">
+                    <h3 class="stat-number" data-target="50000">0</h3>
+                    <p>Happy Customers</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-box">
+                    <h3 class="stat-number" data-target="100">0</h3>
+                    <p>Luxury Vehicles</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-box">
+                    <h3 class="stat-number" data-target="150">0</h3>
+                    <p>Professional Drivers</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-box">
+                    <h3><span class="stat-number" data-target="10">0</span>+</h3>
+                    <p>Years of Excellence</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="about-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Our Mission</h2>
+                <p>To provide unparalleled luxury transportation services that exceed expectations and create lasting impressions. We strive to be more than just a car service – we aim to be your trusted partner in every journey.</p>
+                <ul class="list-unstyled mt-4">
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Punctuality and reliability in every service</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Uncompromising commitment to safety</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Exceptional customer service at every touchpoint</li>
+                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Continuous innovation and improvement</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <h2>Our Values</h2>
+                <div class="mt-4">
+                    <div class="mb-4">
+                        <h5><i class="fas fa-star text-primary me-2"></i> Excellence</h5>
+                        <p>We maintain the highest standards in everything we do, from vehicle maintenance to customer service.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5><i class="fas fa-handshake text-primary me-2"></i> Trust</h5>
+                        <p>Building lasting relationships through transparency, reliability, and consistent quality service.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5><i class="fas fa-lightbulb text-primary me-2"></i> Innovation</h5>
+                        <p>Embracing technology and new ideas to enhance the customer experience and streamline operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Why We Stand Out</h2>
+            <p>The Quickoo difference in luxury transportation</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Award-Winning Service</h3>
+                    <p>Recognized for excellence in luxury transportation with multiple industry awards and certifications.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly Options</h3>
+                    <p>Commitment to sustainability with hybrid and electric vehicles available in our premium fleet.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Standards</h3>
+                    <p>International service standards with local expertise, serving clients from around the world.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

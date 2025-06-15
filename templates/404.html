@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found - Quickoo{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="error-content">
+                    <h1 class="display-1 text-primary">404</h1>
+                    <h2 class="mb-4">Oops! Page Not Found</h2>
+                    <p class="lead mb-5">The page you're looking for seems to have taken a wrong turn. Don't worry, we'll help you get back on track.</p>
+                    <div class="error-actions">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary me-3">
+                            <i class="fas fa-home"></i> Go Home
+                        </a>
+                        <a href="{{ url_for('contact') }}" class="btn btn-outline-primary">
+                            <i class="fas fa-envelope"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.error-content {
+    padding: 4rem 0;
+}
+.display-1 {
+    font-size: 8rem;
+    font-weight: 700;
+    opacity: 0.3;
+}
+</style>
+{% endblock %}
