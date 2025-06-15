@@ -13,4 +13,4 @@ EXPOSE 5000
 ENV NAME World
 
 # Run the Flask server
-CMD ["python", "main.py"]
+CMD ["python", "app.py"]
