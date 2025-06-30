@@ -30,8 +30,8 @@ class Config:
     # Company settings
     COMPANY_NAME = 'Quickoo PVT LTD'
     COMPANY_EMAIL = 'info@quickoo.co.uk'
-    COMPANY_PHONE = '+44 20 1234 5678'
-    COMPANY_ADDRESS = '123 Oxford Street, London, UK W1D 2LG'
+    COMPANY_PHONE = '+44 20 3576 1617'
+    COMPANY_ADDRESS = '7 Ox Ground, Aylesbury, HP18 0FF'
 
     # SEO settings
     SEO_TITLE = 'Quickoo - Premium Car Service UK'

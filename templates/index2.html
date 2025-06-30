@@ -3,6 +3,221 @@
 {% block title %}Quickoo - Premium Car Service UK | Luxury Transportation{% endblock %}
 
 {% block content %}
+<style>
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            margin: 0 10px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            position: relative;
+            height: 250px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-placeholder {
+            width: 200px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-subtitle {
+            color: #6c757d;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-indicator {
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-item {
+            display: flex;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-icon {
+            color: #28a745;
+            margin-right: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .price-text {
+            font-weight: 600;
+            text-align: left;
+            color: var(--text-dark);
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .carousel-btn:disabled:hover {
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #dee2e6;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator-dot.active {
+            background: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 0;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .carousel-slide {
+                min-width: 50%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .carousel-slide {
+                min-width: 33.333%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .carousel-slide {
+                min-width: 25%;
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
 <!-- Hero Section with Video Background -->
 <section class="hero-section">
     <div class="container">
@@ -10,8 +225,10 @@
             <div class="col-lg-7">
                 <div class="hero-content">
                     <span class="hero-badge animate-fadeInUp">Premium Car Service</span>
-                    <h1 class="hero-title animate-fadeInUp">Experience Luxury <span class="text-gradient">Transportation</span> at Its Finest</h1>
-                    <p class="hero-description animate-fadeInUp">Elevate your journey with Quickoo's premium chauffeur services. Where elegance meets reliability across the UK.</p>
+                    <h1 class="hero-title animate-fadeInUp">Experience Luxury <span
+                            class="text-gradient">Transportation</span> at Its Finest</h1>
+                    <p class="hero-description animate-fadeInUp">Elevate your journey with Quickoo's premium chauffeur
+                        services. Where elegance meets reliability across the UK.</p>
                     <div class="hero-buttons animate-fadeInUp">
                         <a href="tel:+442035761617" class="btn btn-primary btn-lg me-3 btn-glow">
                             <i class="fas fa-phone-alt me-2"></i> Book Your Ride
@@ -36,7 +253,8 @@
         <div class="section-header text-center" data-aos="fade-up">
             <span class="section-badge">Our Services</span>
             <h2 class="section-title">Premium Services <span class="text-gradient">Tailored for You</span></h2>
-            <p class="section-subtitle">Experience unmatched luxury and comfort with our comprehensive range of services</p>
+            <p class="section-subtitle">Experience unmatched luxury and comfort with our comprehensive range of services
+            </p>
         </div>
         <div class="row g-4 mt-4">
             <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -91,57 +309,94 @@
             <h2 class="section-title">Travel in <span class="text-gradient">Ultimate Luxury</span></h2>
             <p class="section-subtitle">Choose from our meticulously maintained collection of premium vehicles</p>
         </div>
-        <div class="fleet-carousel-wrapper mt-5" data-aos="fade-up">
-            <div class="fleet-showcase">
-                <div class="fleet-item active">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="fleet-image">
-                                <img src="/static/images/f1.jpg" alt="Mercedes S-Class" class="img-fluid rounded-4">
-                                <div class="fleet-badge">Most Popular</div>
-                            </div>
+        <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- First Class Card -->
+                <div class="carousel-slide">
+                    <div class="service-card">
+                        <div class="card-image">
+                            <img src="/static/images/css1.png" />
                         </div>
-                        <div class="col-lg-6">
-                            <div class="fleet-details">
-                                <h3>Mercedes-Benz S-Class</h3>
-                                <p class="fleet-tagline">The Pinnacle of Luxury</p>
-                                <div class="fleet-features">
-                                    <div class="feature-item">
-                                        <i class="fas fa-users"></i>
-                                        <span>4 Passengers</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-suitcase"></i>
-                                        <span>3 Luggage</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-wifi"></i>
-                                        <span>Free WiFi</span>
-                                    </div>
-                                </div>
-                                <div class="fleet-amenities">
-                                    <span class="amenity-tag">Leather Seats</span>
-                                    <span class="amenity-tag">Climate Control</span>
-                                    <span class="amenity-tag">Premium Sound</span>
-                                    <span class="amenity-tag">Privacy Glass</span>
-                                </div>
-                                <div class="fleet-price">
-                                    <span class="price-label">Starting from</span>
-                                    <span class="price-amount">£80/hour</span>
-                                </div>
-                                <a href="#" class="btn btn-primary mt-3">Book This Vehicle</a>
-                            </div>
+                        <div class="card-content">
+                            <h3 class="card-title">First Class</h3>
+                            <!-- <p class="card-subtitle">Mercedes S-Class, BMW 7 Series, or similar</p> -->
+                            <div class="price-indicator"></div>
+                            <ul class="feature-list">
+                                <li class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span style="text-align: left;">Tours starting (incl. VAT, fees)</span>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-users feature-icon"></i>
+                                    <span style="text-align: left;">Up to 3 guests</span>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-suitcase feature-icon"></i>
+                                    <span style="text-align: left;">2 carry-on bags or 2 standard check-in
+                                        bag</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="fleet-nav">
-                <button class="fleet-nav-btn active" data-fleet="0">
-                    <img src="/static/images/f2.jpg" alt="S-Class">
-                </button>
-                <button class="fleet-nav-btn" data-fleet="2">
-                    <img src="/static/images/f3.jpg" alt="V-Class">
-                </button>
+
+                <!-- Business Class Card -->
+                <div class="carousel-slide">
+                    <div class="service-card">
+                        <div class="card-image">
+                            <img src="/static/images/css22.jpg" />
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Business Class</h3>
+                            <!-- <p class="card-subtitle">Mercedes E-Class, BMW 5 Series, Audi A6, or similar</p> -->
+                            <div class="price-indicator"></div>
+                            <ul class="feature-list">
+                                <li class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span style="text-align: left;">Tours starting (incl. VAT, fees)</span>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-users feature-icon"></i>
+                                    <span style="text-align: left;">Up to 3 guests</span>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-suitcase feature-icon"></i>
+                                    <span style="text-align: left;">2 carry-on bags, or 2 standard check-in
+                                        bag</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Van Card -->
+                <div class="carousel-slide">
+                    <div class="service-card">
+                        <div class="card-image">
+                            <img src="/static/images/css33.jpg" />
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Business Van</h3>
+                            <!-- <p class="card-subtitle">Mercedes V-Class, Mercedes EQV, or similar</p> -->
+                            <div class="price-indicator"></div>
+                            <ul class="feature-list">
+                                <li class="feature-item">
+                                    <i class="fas fa-check feature-icon"></i>
+                                    <span style="text-align: left;">Tours starting (incl. VAT, fees)</span>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-users feature-icon"></i>
+                                    <span style="text-align: left;">Up to 5 guests</span>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-suitcase feature-icon"></i>
+                                    <span style="text-align: left;">8 carry-on bags, or 5 standard check-in
+                                        bags</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -200,9 +455,13 @@
             </div>
             <div class="col-lg-6">
                 <h2>Excellence in Every Journey</h2>
-                <p>Founded with a vision to redefine luxury transportation in the UK, Quickoo has established itself as the premier choice for discerning travelers who value comfort, reliability, and exceptional service.</p>
-                <p>Our commitment to excellence extends beyond just transportation. We believe in creating memorable experiences that begin the moment you book with us and continue long after your journey ends.</p>
-                <p>With a fleet of meticulously maintained luxury vehicles and a team of professional chauffeurs, we ensure that every ride with Quickoo is nothing short of exceptional.</p>
+                <p>Founded with a vision to redefine luxury transportation in the UK, Quickoo has established itself as
+                    the premier choice for discerning travelers who value comfort, reliability, and exceptional service.
+                </p>
+                <p>Our commitment to excellence extends beyond just transportation. We believe in creating memorable
+                    experiences that begin the moment you book with us and continue long after your journey ends.</p>
+                <p>With a fleet of meticulously maintained luxury vehicles and a team of professional chauffeurs, we
+                    ensure that every ride with Quickoo is nothing short of exceptional.</p>
                 <div class="mt-4">
                     <a href="{{ url_for('contact') }}" class="btn btn-primary">Get in Touch</a>
                 </div>
@@ -362,7 +621,8 @@
                 <div class="cta-content" data-aos="fade-up">
                     <span class="cta-badge">Start Your Journey</span>
                     <h2 class="cta-title">Ready to Experience <span class="text-gradient">Luxury Travel?</span></h2>
-                    <p class="cta-description">Book your premium car service today and discover why thousands trust Quickoo for their transportation needs.</p>
+                    <p class="cta-description">Book your premium car service today and discover why thousands trust
+                        Quickoo for their transportation needs.</p>
                     <div class="cta-buttons">
                         <a href="tel:+442035761617" class="btn btn-primary btn-lg me-3 btn-glow">
                             <i class="fas fa-phone-alt me-2"></i> Call Now
@@ -393,671 +653,1013 @@
 
 <!-- Add custom styles for new sections -->
 <style>
-/* Hero Section Enhancements */
-.hero-video-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
+    /* Hero Section Enhancements */
+    .hero-video-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(72, 115, 7, 0.6) 100%);
+    }
+
+    .hero-badge {
+        display: inline-block;
+        background: rgba(72, 115, 7, 0.2);
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        border: 1px solid rgba(72, 115, 7, 0.5);
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
 
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(72,115,7,0.6) 100%);
-}
-
-.hero-badge {
-    display: inline-block;
-    background: rgba(72,115,7,0.2);
-    color: #fff;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    border: 1px solid rgba(72,115,7,0.5);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-.text-gradient {
-    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-description {
-    font-size: 1.3rem;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 2.5rem;
-}
-
-.btn-glow {
-    box-shadow: 0 0 20px rgba(72,115,7,0.5);
-    animation: glow 2s ease-in-out infinite;
-}
-
-@keyframes glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(72,115,7,0.5); }
-    50% { box-shadow: 0 0 30px rgba(72,115,7,0.8); }
-}
-
-.btn-glass {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #fff;
-}
-
-.btn-glass:hover {
-    background: rgba(255,255,255,0.2);
-    color: #fff;
-}
-
-.hero-stats {
-    display: flex;
-    gap: 3rem;
-    margin-top: 3rem;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-item h3 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #487307;
-    margin-bottom: 0.5rem;
-}
-
-.stat-item p {
-    color: rgba(255,255,255,0.8);
-    font-size: 0.9rem;
-}
-
-.hero-car-image img {
-    border: 3px solid rgba(72,115,7,0.3);
-}
-
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.hero-scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.scroll-down {
-    display: block;
-    width: 30px;
-    height: 50px;
-    border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 15px;
-    position: relative;
-}
-
-.scroll-down span {
-    display: block;
-    width: 4px;
-    height: 4px;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scroll-down 2s infinite;
-}
-
-.scroll-down span:nth-child(1) { top: 10px; animation-delay: 0s; }
-.scroll-down span:nth-child(2) { top: 20px; animation-delay: 0.15s; }
-.scroll-down span:nth-child(3) { top: 30px; animation-delay: 0.3s; }
-
-@keyframes scroll-down {
-    0% { opacity: 1; }
-    100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-}
-
-/* Section Styles */
-.section-badge {
-    display: inline-block;
-    background: rgba(72,115,7,0.1);
-    color: #487307;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
-
-.section-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 1rem;
-}
-
-.section-subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Service Cards */
-.gradient-card {
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-    border: 1px solid rgba(0,0,0,0.08);
-    padding: 2.5rem;
-    border-radius: 20px;
-    height: 100%;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.gradient-card::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: linear-gradient(45deg, transparent, rgba(72,115,7,0.05), transparent);
-    transition: all 0.6s;
-}
-
-.gradient-card:hover::before {
-    top: -50%;
-    left: -50%;
-}
-
-.gradient-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.service-icon-wrapper {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.service-icon-wrapper i {
-    font-size: 2rem;
-    color: #fff;
-}
-
-.gradient-card:hover .service-icon-wrapper {
-    transform: rotate(10deg) scale(1.1);
-}
-
-.service-link {
-    color: #487307;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.service-link:hover {
-    gap: 1rem;
-    color: #3a5a06;
-}
-
-/* Fleet Showcase */
-.fleet-showcase {
-    background: #fff;
-    border-radius: 20px;
-    padding: 3rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.fleet-image {
-    position: relative;
-}
-
-.fleet-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #487307;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-}
-
-.fleet-tagline {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 2rem;
-}
-
-.fleet-features {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #666;
-}
-
-.feature-item i {
-    color: #487307;
-}
-
-.fleet-amenities {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-}
-
-.amenity-tag {
-    background: rgba(72,115,7,0.1);
-    color: #487307;
-    padding: 0.3rem 1rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-}
-
-.fleet-price {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.price-label {
-    color: #666;
-}
-
-.price-amount {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #487307;
-}
-
-.fleet-nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.fleet-nav-btn {
-    width: 80px;
-    height: 60px;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.fleet-nav-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.fleet-nav-btn.active {
-    border-color: #487307;
-    transform: scale(1.1);
-}
-
-/* Process Cards */
-.process-card {
-    text-align: center;
-    padding: 2rem;
-    position: relative;
-}
-
-.process-number {
-    position: absolute;
-    top: 0;
-    right: 30px;
-    font-size: 4rem;
-    font-weight: 700;
-    color: rgba(72,115,7,0.1);
-}
-
-.process-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-}
-
-.process-icon i {
-    font-size: 2rem;
-    color: #fff;
-}
-
-.process-line {
-    position: absolute;
-    top: 40px;
-    right: -50%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #487307 0%, transparent 100%);
-}
-
-/* Testimonial Cards */
-.testimonial-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    height: 100%;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.testimonial-card.featured {
-    background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
-    color: #fff;
-    transform: scale(1.05);
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.testimonial-stars {
-    margin-bottom: 1rem;
-}
-
-.testimonial-stars i {
-    color: #ffc107;
-    font-size: 1.1rem;
-}
-
-.testimonial-text {
-    font-style: italic;
-    margin-bottom: 2rem;
-    line-height: 1.8;
-}
-
-.testimonial-card.featured .testimonial-text {
-    color: rgba(255,255,255,0.95);
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.testimonial-author img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.testimonial-author h5 {
-    margin-bottom: 0.2rem;
-    font-weight: 600;
-}
-
-.testimonial-author span {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.testimonial-card.featured .testimonial-author span {
-    color: rgba(255,255,255,0.8);
-}
-
-/* Feature Grid Cards */
-.feature-grid-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    height: 100%;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.08);
-}
-
-.feature-grid-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.feature-icon-box {
-    width: 70px;
-    height: 70px;
-    background: rgba(72,115,7,0.1);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-}
-
-.feature-icon-box i {
-    font-size: 2rem;
-    color: #487307;
-}
-
-/* CTA Modern Section */
-.cta-modern-section {
-    position: relative;
-    padding: 5rem 0;
-    overflow: hidden;
-}
-
-.cta-bg-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.cta-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.cta-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(72,115,7,0.8) 100%);
-}
-
-.cta-content {
-    position: relative;
-    z-index: 1;
-}
-
-.cta-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    color: #fff;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-}
-
-.cta-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 1.5rem;
-}
-
-.cta-description {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 2.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-features {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.cta-feature {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255,255,255,0.8);
-}
-
-.cta-feature i {
-    color: #6ba60a;
-}
-
-/* Responsive adjustments */
-@media (max-width: 991px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .text-gradient {
+        background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-description {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2.5rem;
+    }
+
+    .btn-glow {
+        box-shadow: 0 0 20px rgba(72, 115, 7, 0.5);
+        animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+
+        0%,
+        100% {
+            box-shadow: 0 0 20px rgba(72, 115, 7, 0.5);
+        }
+
+        50% {
+            box-shadow: 0 0 30px rgba(72, 115, 7, 0.8);
+        }
+    }
+
+    .btn-glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+    }
+
+    .btn-glass:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
     }
 
     .hero-stats {
-        justify-content: center;
+        display: flex;
+        gap: 3rem;
+        margin-top: 3rem;
     }
 
-    .fleet-features {
-        flex-wrap: wrap;
-    }
-
-    .process-line {
-        display: none;
-    }
-
-    .cta-features {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 767px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .hero-stats {
-        gap: 2rem;
+    .stat-item {
+        text-align: center;
     }
 
     .stat-item h3 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #487307;
+        margin-bottom: 0.5rem;
     }
 
-    .fleet-nav {
+    .stat-item p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+    }
+
+    .hero-car-image img {
+        border: 3px solid rgba(72, 115, 7, 0.3);
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    .hero-scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .scroll-down {
+        display: block;
+        width: 30px;
+        height: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 15px;
+        position: relative;
+    }
+
+    .scroll-down span {
+        display: block;
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scroll-down 2s infinite;
+    }
+
+    .scroll-down span:nth-child(1) {
+        top: 10px;
+        animation-delay: 0s;
+    }
+
+    .scroll-down span:nth-child(2) {
+        top: 20px;
+        animation-delay: 0.15s;
+    }
+
+    .scroll-down span:nth-child(3) {
+        top: 30px;
+        animation-delay: 0.3s;
+    }
+
+    @keyframes scroll-down {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateX(-50%) translateY(20px);
+        }
+    }
+
+    /* Section Styles */
+    .section-badge {
+        display: inline-block;
+        background: rgba(72, 115, 7, 0.1);
+        color: #487307;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Service Cards */
+    .gradient-card {
+        background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 2.5rem;
+        border-radius: 20px;
+        height: 100%;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .gradient-card::before {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 300%;
+        height: 300%;
+        background: linear-gradient(45deg, transparent, rgba(72, 115, 7, 0.05), transparent);
+        transition: all 0.6s;
+    }
+
+    .gradient-card:hover::before {
+        top: -50%;
+        left: -50%;
+    }
+
+    .gradient-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon-wrapper {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .service-icon-wrapper i {
+        font-size: 2rem;
+        color: #fff;
+    }
+
+    .gradient-card:hover .service-icon-wrapper {
+        transform: rotate(10deg) scale(1.1);
+    }
+
+    .service-link {
+        color: #487307;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .service-link:hover {
+        gap: 1rem;
+        color: #3a5a06;
+    }
+
+    /* Fleet Showcase */
+    .fleet-showcase {
+        background: #fff;
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .fleet-gallery {
+        position: relative;
+    }
+
+    .main-image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .main-fleet-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        transition: all 0.5s ease;
+    }
+
+    .fleet-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #487307;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        z-index: 2;
+    }
+
+    .image-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .main-image-container:hover .image-nav {
+        opacity: 1;
+    }
+
+    .image-nav button {
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .image-nav button:hover {
+        background: #487307;
+        transform: scale(1.1);
+    }
+
+    .fleet-thumbnails {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding: 0.5rem 0;
+    }
+
+    .thumbnail {
+        min-width: 100px;
+        height: 80px;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .thumbnail.active {
+        border-color: #487307;
+        transform: scale(1.05);
+    }
+
+    .thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
+
+    .thumbnail:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .fleet-tagline {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 2rem;
+    }
+
+    .fleet-features {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #666;
+    }
+
+    .feature-item i {
+        color: #487307;
+    }
+
+    .fleet-amenities {
+        display: flex;
         flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .amenity-tag {
+        background: rgba(72, 115, 7, 0.1);
+        color: #487307;
+        padding: 0.3rem 1rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+    }
+
+    .fleet-price {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .price-label {
+        color: #666;
+    }
+
+    .price-amount {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #487307;
+    }
+
+    /* Fleet Selector */
+    .fleet-selector {
+        display: flex;
+        gap: 1rem;
+        margin-top: 3rem;
+        overflow-x: auto;
+        padding: 1rem 0;
+    }
+
+    .fleet-nav-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 250px;
+        border: 2px solid transparent;
+    }
+
+    .fleet-nav-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .fleet-nav-item.active {
+        border-color: #487307;
+        background: linear-gradient(135deg, rgba(72, 115, 7, 0.05) 0%, rgba(107, 166, 10, 0.05) 100%);
+    }
+
+    .fleet-nav-image {
+        width: 80px;
+        height: 60px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .fleet-nav-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .fleet-nav-info h5 {
+        margin-bottom: 0.2rem;
+        font-size: 1rem;
+        color: #000;
+    }
+
+    .fleet-nav-info span {
+        font-size: 0.85rem;
+        color: #666;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+        .main-fleet-image {
+            height: 300px;
+        }
+
+        .fleet-features {
+            flex-wrap: wrap;
+        }
+
+        .fleet-selector {
+            flex-wrap: nowrap;
+            justify-content: start;
+        }
+
+        .fleet-nav-item {
+            min-width: 200px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .fleet-showcase {
+            padding: 1.5rem;
+        }
+
+        .main-fleet-image {
+            height: 250px;
+        }
+
+        .thumbnail {
+            min-width: 80px;
+            height: 60px;
+        }
+
+        .fleet-selector {
+            gap: 0.5rem;
+        }
+
+        .fleet-nav-item {
+            min-width: 180px;
+            padding: 0.75rem;
+        }
+    }
+
+    /* Process Cards */
+    .process-card {
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+    }
+
+    .process-number {
+        position: absolute;
+        top: 0;
+        right: 30px;
+        font-size: 4rem;
+        font-weight: 700;
+        color: rgba(72, 115, 7, 0.1);
+    }
+
+    .process-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+    }
+
+    .process-icon i {
+        font-size: 2rem;
+        color: #fff;
+    }
+
+    .process-line {
+        position: absolute;
+        top: 40px;
+        right: -50%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, #487307 0%, transparent 100%);
+    }
+
+    /* Testimonial Cards */
+    .testimonial-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        position: relative;
+        transition: all 0.3s ease;
     }
 
     .testimonial-card.featured {
-        transform: scale(1);
+        background: linear-gradient(135deg, #487307 0%, #6ba60a 100%);
+        color: #fff;
+        transform: scale(1.05);
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-stars {
+        margin-bottom: 1rem;
+    }
+
+    .testimonial-stars i {
+        color: #ffc107;
+        font-size: 1.1rem;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+    }
+
+    .testimonial-card.featured .testimonial-text {
+        color: rgba(255, 255, 255, 0.95);
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .testimonial-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .testimonial-author h5 {
+        margin-bottom: 0.2rem;
+        font-weight: 600;
+    }
+
+    .testimonial-author span {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .testimonial-card.featured .testimonial-author span {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Feature Grid Cards */
+    .feature-grid-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        height: 100%;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .feature-grid-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-icon-box {
+        width: 70px;
+        height: 70px;
+        background: rgba(72, 115, 7, 0.1);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+    }
+
+    .feature-icon-box i {
+        font-size: 2rem;
+        color: #487307;
+    }
+
+    /* CTA Modern Section */
+    .cta-modern-section {
+        position: relative;
+        padding: 5rem 0;
+        overflow: hidden;
+    }
+
+    .cta-bg-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cta-bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cta-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(72, 115, 7, 0.8) 100%);
+    }
+
+    .cta-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .cta-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
     }
 
     .cta-title {
-        font-size: 2rem;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 1.5rem;
     }
-}
+
+    .cta-description {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-features {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .cta-feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .cta-feature i {
+        color: #6ba60a;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-stats {
+            justify-content: center;
+        }
+
+        .fleet-features {
+            flex-wrap: wrap;
+        }
+
+        .process-line {
+            display: none;
+        }
+
+        .cta-features {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .hero-stats {
+            gap: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+        }
+
+        .fleet-nav {
+            flex-wrap: wrap;
+        }
+
+        .testimonial-card.featured {
+            transform: scale(1);
+        }
+
+        .cta-title {
+            font-size: 2rem;
+        }
+    }
 </style>
-
 <!-- Initialize AOS (Animate On Scroll) -->
-<link href="/static/external/aos.css" rel="stylesheet">
-<script src="/static/external/aos.js"></script>
+<!-- Initialize AOS (Animate On Scroll) -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-    });
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
 
-    // Fleet carousel functionality
-    const fleetNavBtns = document.querySelectorAll('.fleet-nav-btn');
-    const fleetData = [
-        {
-            name: 'Mercedes-Benz S-Class',
-            tagline: 'The Pinnacle of Luxury',
-            image: '/static/images/css1.jpg',
-            passengers: 4,
-            luggage: 3,
-            price: '£80/hour'
-        },
-        {
-            name: 'Mercedes V-Class',
-            tagline: 'Spacious Executive Travel',
-            image: '/static/images/css2.jpg',
-            passengers: 7,
-            luggage: 7,
-            price: '£100/hour'
-        },
-    ];
+        // Fleet carousel functionality with gallery
+        const fleetData = [
+            {
+                name: 'Mercedes-Benz S-Class',
+                tagline: 'The Pinnacle of Luxury',
+                images: [
+                    'https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1462396881884-de2c07cb95ed?q=80&w=1200'
+                ],
+                passengers: 4,
+                luggage: 3,
+                price: '£80/hour',
+                badge: 'Most Popular'
+            },
+            {
+                name: 'BMW 7 Series',
+                tagline: 'Ultimate Driving Experience',
+                images: [
+                    'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1617531653520-7a0df86302f0?q=80&w=1200'
+                ],
+                passengers: 4,
+                luggage: 3,
+                price: '£85/hour',
+                badge: 'Executive Choice'
+            },
+            {
+                name: 'Mercedes V-Class',
+                tagline: 'Spacious Executive Travel',
+                images: [
+                    'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1583267746897-2cf415887172?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=1200'
+                ],
+                passengers: 7,
+                luggage: 7,
+                price: '£100/hour',
+                badge: 'Best for Groups'
+            },
+            {
+                name: 'Range Rover Sport',
+                tagline: 'Luxury Meets Adventure',
+                images: [
+                    'https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1605515298946-d062f2e9da53?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1200'
+                ],
+                passengers: 5,
+                luggage: 5,
+                price: '£95/hour',
+                badge: 'Premium SUV'
+            }
+        ];
 
-    fleetNavBtns.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
+        let currentVehicle = 0;
+        let currentImage = 0;
+
+        // Function to update fleet display
+        function updateFleetDisplay(index) {
+            const fleet = fleetData[index];
+            const fleetItem = document.querySelector('.fleet-item');
+
+            // Update main image
+            const mainImage = fleetItem.querySelector('.main-fleet-image');
+            mainImage.src = fleet.images[0];
+
+            // Update thumbnails
+            const thumbnailsContainer = fleetItem.querySelector('.fleet-thumbnails');
+            thumbnailsContainer.innerHTML = '';
+
+            fleet.images.forEach((img, imgIndex) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = `thumbnail ${imgIndex === 0 ? 'active' : ''}`;
+                thumbnail.setAttribute('data-img', img);
+                thumbnail.innerHTML = `<img src="${img.replace('1200', '200')}" alt="Vehicle image ${imgIndex + 1}">`;
+
+                thumbnail.addEventListener('click', function () {
+                    // Update main image
+                    mainImage.src = img;
+                    currentImage = imgIndex;
+
+                    // Update active thumbnail
+                    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                    thumbnail.classList.add('active');
+                });
+
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+
+            // Update vehicle details
+            fleetItem.querySelector('h3').textContent = fleet.name;
+            fleetItem.querySelector('.fleet-tagline').textContent = fleet.tagline;
+            fleetItem.querySelector('.feature-item:nth-child(1) span').textContent = `${fleet.passengers} Passengers`;
+            fleetItem.querySelector('.feature-item:nth-child(2) span').textContent = `${fleet.luggage} Luggage`;
+            fleetItem.querySelector('.price-amount').textContent = fleet.price;
+            fleetItem.querySelector('.fleet-badge').textContent = fleet.badge;
+
+            currentVehicle = index;
+            currentImage = 0;
+        }
+
+        // Fleet navigation items click handlers
+        const fleetNavItems = document.querySelectorAll('.fleet-nav-item');
+        fleetNavItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                // Remove active class from all items
+                fleetNavItems.forEach(navItem => navItem.classList.remove('active'));
+                item.classList.add('active');
+
+                // Update fleet display
+                updateFleetDisplay(index);
+            });
+        });
+
+        // Image navigation buttons
+        function setupImageNavigation() {
+            const prevBtn = document.querySelector('.prev-img');
+            const nextBtn = document.querySelector('.next-img');
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    const images = fleetData[currentVehicle].images;
+                    currentImage = (currentImage - 1 + images.length) % images.length;
+                    document.querySelector('.main-fleet-image').src = images[currentImage];
+
+                    // Update active thumbnail
+                    document.querySelectorAll('.thumbnail').forEach((t, i) => {
+                        t.classList.toggle('active', i === currentImage);
+                    });
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    const images = fleetData[currentVehicle].images;
+                    currentImage = (currentImage + 1) % images.length;
+                    document.querySelector('.main-fleet-image').src = images[currentImage];
+
+                    // Update active thumbnail
+                    document.querySelectorAll('.thumbnail').forEach((t, i) => {
+                        t.classList.toggle('active', i === currentImage);
+                    });
+                });
+            }
+        }
+
+        // Initialize image navigation
+        setTimeout(setupImageNavigation, 100);
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const mainImageContainer = document.querySelector('.main-image-container');
+        if (mainImageContainer) {
+            mainImageContainer.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            mainImageContainer.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+        }
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                // Swipe left - next image
+                document.querySelector('.next-img')?.click();
+            }
+            if (touchEndX > touchStartX + 50) {
+                // Swipe right - previous image
+                document.querySelector('.prev-img')?.click();
+            }
+        };
+
+        ('click', () => {
             // Remove active class from all buttons
             fleetNavBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -1074,6 +1676,5 @@ document.addEventListener('DOMContentLoaded', function() {
             fleetItem.querySelector('.price-amount').textContent = fleet.price;
         });
     });
-});
 </script>
 {% endblock %}
