@@ -4,220 +4,220 @@
 
 {% block content %}
 <style>
-        .service-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            height: 100%;
-            margin: 0 10px;
-        }
+    .service-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        margin: 0 10px;
+    }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
-        }
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+    }
 
-        .card-image {
-            position: relative;
-            height: 250px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+    .card-image {
+        position: relative;
+        height: 250px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
 
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
 
-        .service-card:hover .card-image img {
-            transform: scale(1.05);
-        }
+    .service-card:hover .card-image img {
+        transform: scale(1.05);
+    }
 
-        .card-placeholder {
-            width: 200px;
-            height: 120px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
+    .card-placeholder {
+        width: 200px;
+        height: 120px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px dashed rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+    }
 
-        .card-content {
-            padding: 2rem;
-        }
+    .card-content {
+        padding: 2rem;
+    }
 
-        .card-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
+    .card-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+    }
 
-        .card-subtitle {
-            color: #6c757d;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
+    .card-subtitle {
+        color: #6c757d;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
 
-        .price-indicator {
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border-radius: 2px;
-            margin-bottom: 1.5rem;
-            width: 100%;
-        }
+    .price-indicator {
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        border-radius: 2px;
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
 
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-        .feature-item {
-            display: flex;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
+    .feature-item {
+        display: flex;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+    }
 
-        .feature-icon {
-            color: #28a745;
-            margin-right: 0.75rem;
-            font-size: 1.1rem;
-        }
+    .feature-icon {
+        color: #28a745;
+        margin-right: 0.75rem;
+        font-size: 1.1rem;
+    }
 
-        .price-text {
-            font-weight: 600;
-            text-align: left;
-            color: var(--text-dark);
-        }
+    .price-text {
+        font-weight: 600;
+        text-align: left;
+        color: var(--text-dark);
+    }
 
-        .carousel-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
 
-        .carousel-btn {
-            width: 50px;
-            height: 50px;
-            border: none;
-            border-radius: 50%;
-            background: white;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            color: var(--text-dark);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        color: var(--text-dark);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .carousel-btn:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: scale(1.1);
-        }
+    .carousel-btn:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: scale(1.1);
+    }
 
-        .carousel-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
+    .carousel-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+    }
 
-        .carousel-btn:disabled:hover {
-            background: white;
-            color: var(--text-dark);
-        }
+    .carousel-btn:disabled:hover {
+        background: white;
+        color: var(--text-dark);
+    }
 
-        .carousel-indicators {
-            display: flex;
-            gap: 0.5rem;
-        }
+    .carousel-indicators {
+        display: flex;
+        gap: 0.5rem;
+    }
 
-        .indicator-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #dee2e6;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+    .indicator-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #dee2e6;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
 
-        .indicator-dot.active {
-            background: var(--primary-color);
-            transform: scale(1.2);
-        }
+    .indicator-dot.active {
+        background: var(--primary-color);
+        transform: scale(1.2);
+    }
 
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease;
-            gap: 0;
-        }
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 0;
+    }
 
-        .carousel-wrapper {
-            overflow: hidden;
-            width: 100%;
-        }
+    .carousel-wrapper {
+        overflow: hidden;
+        width: 100%;
+    }
 
+    .carousel-slide {
+        min-width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+
+    @media (min-width: 768px) {
         .carousel-slide {
-            min-width: 100%;
-            display: flex;
-            gap: 20px;
+            min-width: 50%;
         }
+    }
 
-        @media (min-width: 768px) {
-            .carousel-slide {
-                min-width: 50%;
-            }
+    @media (min-width: 992px) {
+        .carousel-slide {
+            min-width: 33.333%;
         }
+    }
 
-        @media (min-width: 992px) {
-            .carousel-slide {
-                min-width: 33.333%;
-            }
+    @media (min-width: 1200px) {
+        .carousel-slide {
+            min-width: 25%;
         }
+    }
 
-        @media (min-width: 1200px) {
-            .carousel-slide {
-                min-width: 25%;
-            }
-        }
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #6c757d;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-    </style>
+    .section-subtitle {
+        font-size: 1.1rem;
+        color: #6c757d;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+</style>
 <!-- Hero Section with Video Background -->
 <section class="hero-section">
     <div class="container">
@@ -309,92 +309,85 @@
             <h2 class="section-title">Travel in <span class="text-gradient">Ultimate Luxury</span></h2>
             <p class="section-subtitle">Choose from our meticulously maintained collection of premium vehicles</p>
         </div>
-        <div class="carousel-wrapper">
-            <div class="carousel-track" id="carouselTrack">
-                <!-- First Class Card -->
-                <div class="carousel-slide">
-                    <div class="service-card">
-                        <div class="card-image">
-                            <img src="/static/images/css1.png" />
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">First Class</h3>
-                            <!-- <p class="card-subtitle">Mercedes S-Class, BMW 7 Series, or similar</p> -->
-                            <div class="price-indicator"></div>
-                            <ul class="feature-list">
-                                <li class="feature-item">
-                                    <i class="fas fa-check feature-icon"></i>
-                                    <span style="text-align: left;">Tours starting (incl. VAT, fees)</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-users feature-icon"></i>
-                                    <span style="text-align: left;">Up to 3 guests</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-suitcase feature-icon"></i>
-                                    <span style="text-align: left;">2 carry-on bags or 2 standard check-in
-                                        bag</span>
-                                </li>
-                            </ul>
-                        </div>
+        <div class="row mt-5">
+            <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="/static/images/1.png" />
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">First Class</h3>
+                        <!-- <p class="card-subtitle">Mercedes S-Class, BMW 7 Series, or similar</p> -->
+                        <div class="price-indicator"></div>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span style="text-align: left;">Tours starting (incl. VAT, fees)</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-users feature-icon"></i>
+                                <span style="text-align: left;">Up to 3 guests</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-suitcase feature-icon"></i>
+                                <span style="text-align: left;">2 carry-on bags or 2 standard check-in
+                                    bag</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
-                <!-- Business Class Card -->
-                <div class="carousel-slide">
-                    <div class="service-card">
-                        <div class="card-image">
-                            <img src="/static/images/css22.png" />
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Business Class</h3>
-                            <!-- <p class="card-subtitle">Mercedes E-Class, BMW 5 Series, Audi A6, or similar</p> -->
-                            <div class="price-indicator"></div>
-                            <ul class="feature-list">
-                                <li class="feature-item">
-                                    <i class="fas fa-check feature-icon"></i>
-                                    <span style="text-align: left;">Tours starting (incl. VAT, fees)</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-users feature-icon"></i>
-                                    <span style="text-align: left;">Up to 3 guests</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-suitcase feature-icon"></i>
-                                    <span style="text-align: left;">2 carry-on bags, or 2 standard check-in
-                                        bag</span>
-                                </li>
-                            </ul>
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="/static/images/2.png" />
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Business Class</h3>
+                        <!-- <p class="card-subtitle">Mercedes E-Class, BMW 5 Series, Audi A6, or similar</p> -->
+                        <div class="price-indicator"></div>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span style="text-align: left;">Tours starting (incl. VAT, fees)</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-users feature-icon"></i>
+                                <span style="text-align: left;">Up to 3 guests</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-suitcase feature-icon"></i>
+                                <span style="text-align: left;">2 carry-on bags, or 2 standard check-in
+                                    bag</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
-                <!-- Business Van Card -->
-                <div class="carousel-slide">
-                    <div class="service-card">
-                        <div class="card-image">
-                            <img src="/static/images/css33.png" />
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title">Business Van</h3>
-                            <!-- <p class="card-subtitle">Mercedes V-Class, Mercedes EQV, or similar</p> -->
-                            <div class="price-indicator"></div>
-                            <ul class="feature-list">
-                                <li class="feature-item">
-                                    <i class="fas fa-check feature-icon"></i>
-                                    <span style="text-align: left;">Tours starting (incl. VAT, fees)</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-users feature-icon"></i>
-                                    <span style="text-align: left;">Up to 5 guests</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-suitcase feature-icon"></i>
-                                    <span style="text-align: left;">8 carry-on bags, or 5 standard check-in
-                                        bags</span>
-                                </li>
-                            </ul>
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="/static/images/3.png" />
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Business Van</h3>
+                        <!-- <p class="card-subtitle">Mercedes V-Class, Mercedes EQV, or similar</p> -->
+                        <div class="price-indicator"></div>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span style="text-align: left;">Tours starting (incl. VAT, fees)</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-users feature-icon"></i>
+                                <span style="text-align: left;">Up to 5 guests</span>
+                            </li>
+                            <li class="feature-item">
+                                <i class="fas fa-suitcase feature-icon"></i>
+                                <span style="text-align: left;">8 carry-on bags, or 5 standard check-in
+                                    bags</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -451,7 +444,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <img src="/static/images/f3.png" alt="About Quickoo" class="img-fluid">
+                <img src="/static/images/about.jpg" alt="About Quickoo" class="img-fluid">
             </div>
             <div class="col-lg-6">
                 <h2>Excellence in Every Journey</h2>
@@ -613,7 +606,7 @@
 <section class="cta-modern-section">
     <div class="cta-bg-wrapper">
         <div class="cta-overlay"></div>
-        <img src="/static/images/cta1.jpg" alt="Luxury Car" class="cta-bg-image">
+        <img src="/static/images/23.jpg" alt="Luxury Car" class="cta-bg-image">
     </div>
     <div class="container">
         <div class="row align-items-center min-vh-50">
