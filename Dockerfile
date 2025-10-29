@@ -19,9 +19,9 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Create symbolic links for python and pip
-RUN ln -s /usr/bin/python3 /usr/bin/python && \
-    ln -s /usr/bin/pip3 /usr/bin/pip
+# Create symbolic links for python and pip (force overwrite if exists)
+RUN ln -sf /usr/bin/python3 /usr/bin/python && \
+    ln -sf /usr/bin/pip3 /usr/bin/pip
 
 # Copy your application code
 COPY . /app
@@ -31,7 +31,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
 
-ENV NAME World
+ENV NAME=World
 
 # Run the Flask server
 CMD ["python", "app.py"]
